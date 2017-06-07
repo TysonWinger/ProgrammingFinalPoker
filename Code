@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GD47EvanTysonRomas_Programming_A3Final
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           Console.WriteLine("Hello! Welcome to Gourd-on Ramsay's 'Hells poker' are you ready?\n");
+           System.Threading.Thread.Sleep(500);
+           Console.WriteLine("Press enter to continue");
+           Console.ReadLine();
+
+           int iPlayerMoney = 5000;
+           int iDealerMoney = 5000;
+           while (iPlayerMoney >= 0)
+           {                   
+                //---Deal Cards---
+                //--Put in blinds--
+                Console.WriteLine("What would you like to do?\n");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("You have ${0}", iPlayerMoney);
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("The dealer has ${0}\n", iDealerMoney);
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("1. Call\n2. Raise\n3. Check\n4. Fold\n");
+                System.Threading.Thread.Sleep(500);
+                Console.WriteLine("Please enter a number between 1 and 4.");
+
+                string sActionChoice;
+                int iActionChoice;
+
+                while (true)
+                {
+                    sActionChoice = Console.ReadLine();
+                    bool bActionChoice = Int32.TryParse(sActionChoice, out iActionChoice);
+                    if (iActionChoice > 4 || iActionChoice < 1)
+                    {
+                        Console.WriteLine("Enter a number between 1 and 4, I hope you can read better than you can count");
+                        continue;
+                    }
+                    else if (bActionChoice == false)
+                    {
+                        Console.WriteLine("I told you to enter a number, are your fingers sauages or are you just an idiot?");
+                        continue;
+                    }
+                    break;
+                }
+               // switch (iActionChoice)
+                {
+                    //case 1: if there is a bet on the table must call raise or fold
+                    //break;
+
+                    //case 2: raising calls and then adds more money to the pot
+
+
+                    //case 3: if not calling or raising then pass turn to dealer
+
+                    //case 4: forfeit your hand dealer wins        
+                }
+            }    
+        }
+    }
+}
+
